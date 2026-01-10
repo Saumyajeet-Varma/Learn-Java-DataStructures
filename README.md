@@ -24,6 +24,23 @@ This Repository only contains **Java Data Structures**.
 - [The Collections Framework](#the-collections-framework)
     - [Core Interfaces in the Collections Framework](#core-interfaces-in-the-collections-framework)
     - [Overview of Classes](#overview-of-classes)
+- [List Interface](#list-interface) 
+    - [Common List Methods](#common-list-methods)
+    - [Array vs List](#array-vs-list)
+- [ArrayList](#arraylist) 
+- [LinkedList](#linkedlist) 
+- [Set Interface](#set-interface) 
+    - [Common Set Methods](#common-set-methods)
+    - [List vs Set](#list-vs-set)
+- [HashSet](#hashset)
+- [TreeSet](#treeset)
+- [LinkedHashSet](#linkedhashset)
+- [Map Interface](#map-interface) 
+    - [Common Map Methods](#common-map-methods)
+    - [List vs Set vs Map](#list-vs-set-vs-map)
+- [HashMap](#hashmap)
+- [TreeMap](#treemap)
+- [LinkedHashMap](#linkedhashmap) 
 
 
 
@@ -75,3 +92,149 @@ All of these are part of the `java.util` package.
 | `Map` | `LinkedHashMap` | Maintains the order in which keys were inserted |
 
 > Use `List` classes when you care about order, you may have duplicates, and want to access elements by index. <br> Use `Set` classes when you need to store unique values only. <br> Use `Map` classes when you need to store pairs of keys and values, like a name and its phone number.
+
+
+
+
+## List Interface
+
+The `List` interface is part of the Java Collections Framework and represents an ordered collection of elements.
+
+You can access elements by their index, add duplicates, and maintain the insertion order.
+
+Since List is an interface, you cannot create a List object directly.
+
+Instead, you use a class that implements the `List` interface, such as:
+- `ArrayList` - like a resizable array with fast random access
+- `LinkedList` - like a train of cars you can easily attach or remove
+
+### Common List Methods
+
+| Method | Description |
+|------|-------------|
+| `add()` | Adds an element to the end of the list |
+| `get()` | Returns the element at the specified position |
+| `set()` | Replaces the element at the specified position |
+| `remove()` | Removes the element at the specified position |
+| `size()` | Returns the number of elements in the list |
+
+### Array vs List
+
+| Array | List |
+|------|------|
+| Fixed size | Dynamic size |
+| Faster performance for raw data | More flexible and feature-rich |
+| Not part of Collections Framework | Part of the Collections Framework |
+
+
+
+
+## ArrayList
+> Will update...
+
+
+
+
+## LinkedList
+> Will update...
+
+
+
+
+## Set Interface
+
+The `Set` interface is part of the Java Collections Framework and is used to store a collection of unique elements.
+
+Unlike a `List`, a `Set` does not allow duplicates, and it does not preserve the order of elements (unless you're using `TreeSet` or `LinkedHashSet`).
+
+Common classes that implement Set:
+- `HashSet` - fast and unordered
+- `TreeSet` - sorted set
+- `LinkedHashSet` - ordered by insertion
+ 
+### Common Set Methods
+
+| Method | Description |
+|------|-------------|
+| `add()` | Adds an element if it's not already in the set |
+| `remove()` | Removes the element from the set |
+| `contains()` | Checks if the set contains the element |
+| `size()` | Returns the number of elements |
+| `clear()` | Removes all elements |
+
+
+### List vs Set
+
+| List | Set |
+|------|-----|
+| Allows duplicates | Does not allow duplicates |
+| Maintains order | Does not guarantee order |
+| Access by index | No index-based access |
+
+
+
+
+## HashSet
+> Will update...
+
+
+
+
+## TreeSet
+> Will update...
+
+
+
+
+## LinkedHashSet
+> Will update...
+
+
+
+
+## Map Interface
+
+The `Map` interface is a part of the Java Collections Framework and is used to store **key-value pairs**. Each key must be unique, but values can be duplicated.
+
+A `Map` is useful when you want to associate a key (like a name or ID) with a value (like an age or description).
+
+Common classes that implement Map:
+- `HashMap` - fast and unordered
+- `TreeMap` - sorted by key
+- `LinkedHashMap` - ordered by insertion
+
+### Common Map Methods
+
+| Method | Description |
+|------|-------------|
+| `put()` | Adds or updates a key-value pair |
+| `get()` | Returns the value for a given key |
+| `remove()` | Removes the key and its value |
+| `containsKey()` | Checks if the map contains the key |
+| `keySet()` | Returns a set of all keys |
+
+### List vs Set vs Map
+
+| Feature | List | Set | Map |
+|-------|------|-----|-----|
+| Duplicates allowed? | Yes | No | Keys: No, Values: Yes |
+| Stores key-value pairs? | No | No | Yes |
+| Maintains order? | Yes | No (unless using TreeSet or LinkedHashSet) | No (unless using TreeMap or LinkedHashMap) |
+
+
+
+
+## HashMap
+> Will update...
+
+
+
+
+## TreeMap
+> Will update...
+
+
+
+
+## LinkedHashMap
+> Will update...
