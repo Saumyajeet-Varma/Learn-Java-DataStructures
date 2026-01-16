@@ -28,6 +28,15 @@ This Repository only contains **Java Data Structures**.
     - [Common List Methods](#common-list-methods)
     - [Array vs List](#array-vs-list)
 - [ArrayList](#arraylist) 
+    - [Create an ArrayList](#create-an-arraylist)
+    - [Add Elements](#add-elements)
+    - [Access an Element](#access-an-element)
+    - [Change an Element](#change-an-element)
+    - [Remove an Element](#remove-an-element)
+    - [ArrayList Size](#arraylist-size)
+    - [Sort an ArrayList](#sort-an-arraylist)
+    - [The `var` Keyword](#the-var-keyword)
+    - [The List Interface](#the-list-interface)
 - [LinkedList](#linkedlist) 
 - [Set Interface](#set-interface) 
     - [Common Set Methods](#common-set-methods)
@@ -130,7 +139,115 @@ Instead, you use a class that implements the `List` interface, such as:
 
 
 ## ArrayList
-> Will update...
+
+An `ArrayList` is like a resizable array
+
+It is part of the java.util package and implements the List interface.
+
+The difference between a built-in array and an `ArrayList` in Java, is that the size of an array cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one). While elements can be added and removed from an ArrayList whenever you want.
+
+### Create an ArrayList
+
+```java
+import java.util.ArrayList;
+
+ArrayList<String> cars = new ArrayList<String>(); 
+```
+
+> Now you can use methods like `add()`, `get()`, `set()`, and `remove()` to manage your list of elements.
+
+### Add Elements
+
+To add elements to an ArrayList, use the `add()` method
+
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        ArrayList<String> cars = new ArrayList<String>();
+        
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add(0, "Mazda"); // Insert element at the beginning of the list (0)
+    
+        System.out.println(cars);
+  }
+}
+```
+
+### Access an Element
+
+To access an element in the `ArrayList`, use the `get()` method and refer to the index number
+
+```java
+cars.get(0);  // Get the first element
+```
+
+### Change an Element
+
+To modify an element, use the `set()` method and refer to the index number
+
+```java
+cars.set(0, "Opel");
+```
+
+### Remove an Element
+
+To remove an element, use the `remove()` method and refer to the index number
+
+```java
+cars.remove(0);
+```
+
+To remove all the elements in the `ArrayList`, use the `clear()` method
+
+```java
+cars.clear();
+```
+
+### ArrayList Size
+
+To find out how many elements an `ArrayList` have, use the `size()` method
+
+```java
+cars.size();
+```
+
+### Sort an ArrayList
+
+Another useful class in the `java.util` package is the `Collections` class, which include the `sort()` method for sorting lists alphabetically or numerically
+
+**Code**: [./src/module15/ArrayListDS.java](./src/module15/ArrayListDS.java)
+
+### The var Keyword
+
+you can use the `var` keyword to declare an `ArrayList` variable without writing the type twice. The compiler figures out the type from the value you assign
+
+This makes code shorter, **but many developers still use the full type for clarity**
+
+```java
+// Without var
+ArrayList<String> cars = new ArrayList<String>();
+
+// With var
+var cars = new ArrayList<String>();
+```
+
+### The List Interface
+
+> **Note**: Sometimes you will see both `List` and `ArrayList` in Java code, like this:
+
+```java
+import java.util.List;
+import java.util.ArrayList;
+
+List<String> cars = new ArrayList<>();
+```
+
+This means the variable (cars) is declared as a `List` (the interface), but it stores an `ArrayList` object (the actual list). Since `ArrayList` implements the `List` interface, this is possible.
 
 
 
