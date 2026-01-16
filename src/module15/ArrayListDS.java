@@ -19,13 +19,12 @@ public class ArrayListDS {
         myStrs.add("World");
         myStrs.add("!");
         myStrs.add(0,"Hello");
+        System.out.println(myStrs);
 
         myNums.add(3);
         myNums.add(1);
         myNums.add(4);
         myNums.add(2);
-
-        System.out.println(myStrs);
         System.out.println(myNums);
         
         
@@ -66,6 +65,9 @@ public class ArrayListDS {
         // Sort an ArrayList_________________________
 
         Collections.sort(myNums);
-        System.out.println(myStrs);
+        System.out.println(myNums);
+        
+        Collections.sort(myNums, Collections.reverseOrder());
+        System.out.println(myNums);
     }
 }

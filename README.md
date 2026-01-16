@@ -174,7 +174,7 @@ public class Main {
         cars.add(0, "Mazda"); // Insert element at the beginning of the list (0)
     
         System.out.println(cars);
-  }
+    }
 }
 ```
 
@@ -222,9 +222,9 @@ Another useful class in the `java.util` package is the `Collections` class, whic
 
 **Code**: [./src/module15/ArrayListDS.java](./src/module15/ArrayListDS.java)
 
-### The var Keyword
+### The `var` Keyword
 
-you can use the `var` keyword to declare an `ArrayList` variable without writing the type twice. The compiler figures out the type from the value you assign
+We can use the `var` keyword to declare an `ArrayList` variable without writing the type twice. The compiler figures out the type from the value we assign
 
 This makes code shorter, **but many developers still use the full type for clarity**
 
@@ -253,7 +253,81 @@ This means the variable (cars) is declared as a `List` (the interface), but it s
 
 
 ## LinkedList
-> Will update...
+
+We have learned about the `ArrayList` class. The `LinkedList` class is almost identical to the `ArrayList`
+
+```java
+import java.util.LinkedList;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        LinkedList<String> cars = new LinkedList<String>();
+        
+        cars.add("Volvo");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+    
+        System.out.println(cars);
+    }
+}
+```
+
+### ArrayList vs LinkedList
+
+| Feature                 | ArrayList                                                | LinkedList                                                    |
+| ----------------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| Type                    | Implements List interface                                | Implements List interface                                     |
+| Data Storage            | Uses a regular dynamic array internally                  | Uses linked containers (nodes)                                |
+| Element Storage         | Elements are stored in contiguous memory locations       | Elements are stored in separate containers connected by links |
+| Adding Elements         | Added to the array; resizing happens if capacity is full | Added by creating a new container and linking it              |
+| Memory Reallocation     | Creates a new larger array when full                     | No resizing needed                                            |
+| Internal Structure      | Index-based structure                                    | Node-based structure (each node points to next)               |
+| Traversal               | Direct access using index                                | Sequential access through links                               |
+| Performance (Insertion) | Slower when resizing or shifting elements                | Faster for insertions and deletions (no shifting)             |
+| Performance (Access)    | Faster random access                                     | Slower random access                                          |
+| Implementation Style    | Array-based                                              | Doubly-linked list (in Java)                                  |
+
+> Use an `ArrayList` for storing and accessing data, and `LinkedList` to manipulate data.
+
+### LinkedList Methods
+
+| Method        | Description                                       |
+| ------------- | ------------------------------------------------- |
+| `addFirst()`    | Adds an element to the beginning of the list      |
+| `addLast()`     | Adds an element to the end of the list            |
+| `removeFirst()` | Removes an element from the beginning of the list |
+| `removeLast()`  | Removes an element from the end of the list       |
+| `getFirst()`    | Gets the element at the beginning of the list     |
+| `getLast()`     | Gets the element at the end of the list           |
+
+### The `var` Keyword
+
+We can use the `var` keyword to declare an `LinkedList` variable without writing the type twice. The compiler figures out the type from the value we assign
+
+This makes code shorter, **but many developers still use the full type for clarity**
+
+```java
+// Without var
+LinkedList<String> cars = new LinkedList<String>();
+
+// With var
+var cars = new LinkedList<String>();
+```
+
+### The List Interface
+
+**Note**: Sometimes you will see both List and LinkedList in Java code, like this:
+
+```java
+import java.util.List;
+import java.util.LinkedList;
+
+List<String> cars = new LinkedList<>();
+```
+
+This means the variable (cars) is declared as a `List` (the interface), but it stores a `LinkedList` object (the actual list). Since `LinkedList` implements the `List` interface, this is possible.
 
 
 
